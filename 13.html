@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		
+		/*.flex{display:flex;margin:0;padding:0;list-style:none;}
+		.flex :nth-child(1){flex:1 1 auto;}
+		.flex :nth-child(2){flex:1 1 auto;}
+		.flex :nth-child(3){flex:auto;}*/
+		#a {
+			border: 1px solid red;
+			width: 200px;
+			padding: 10px;
+			margin: 20px;
+			box-sizing: border-box;
+			position: relative;
+		}
+		#a:after {
+			content: '';
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background: #000;
+			position: absolute;
+		}
+		#b {
+			border: 1px solid red;
+			width: 200px;
+			padding: 10px;
+			margin: 20px;
+		}
+		#c {
+			float: left;
+			border: 1px solid red;
+			width: 200px;
+			padding: 10px;
+			margin: 20px;
+		}
+
+	</style>
+	<script type="text/javascript">
+		var str1 = "fjdiahfdjfkdsab";
+		function unique (arr) { 
+			var result = []; 
+			for (var i = 0; i < arr.length; i++) 
+				{ 
+					if (result.indexOf(arr[i]) == -1) result.push(arr[i]); 
+				} 
+				return result; 
+			}
+		alert(unique(str1));
+		alert(str1.indexOf('p'));
+	</script>
+</head>
+<body>
+<div id="a"></div>
+<div id="b"></div>
+<div id="c"></div>
+
+<!-- <ul class="flex">
+    <li>a</li>
+    <li>b</li>
+    <li>c</li>
+</ul> -->
+
+</body>
+</html>

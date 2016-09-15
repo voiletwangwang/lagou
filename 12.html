@@ -1,0 +1,82 @@
+<html>
+<head>
+<style type="text/css">
+body {
+  text-align: center;
+  padding-top: 20px;
+  font-family: Arial, sans-serif;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 5px;
+  border: solid 1px black;
+  width: 500px;
+  margin: 0 auto;
+}
+
+th, td {
+  text-align: center;
+  border: solid 1px black;
+  padding: 10px;
+}
+
+.vc {
+  visibility: collapse;
+}
+
+.vh {
+  visibility: hidden;
+}
+
+button {
+  margin-top: 5px;
+}
+</style>
+
+</head>
+
+<body>
+<table cellspacing="0" class="table lazy ">
+  <tr>
+    <th>Fruits</th>
+    <th>Vegetables</th>
+    <th>Rocks</th>
+  </tr>
+  <tr>
+    <td>Apple</td>
+    <td>Celery</td>
+    <td>Granite</td>
+  </tr>
+  <tr>
+    <td>Orange</td>
+    <td>Cabbage</td>
+    <td>Flint</td>
+  </tr>
+</table>
+
+<p id="a"><button>collapse行1</button></p>
+
+<p><button>hide行1</button></p>
+
+<p><button>重置</button></p>
+</body>
+<script>
+//var a = document.getElementById('a');
+var btns = document.getElementsByTagName('button'),
+   rows = document.getElementsByTagName('tr');
+
+
+btns[0].addEventListener('click', function () {
+  rows[1].className = 'vc';
+}, false);
+
+btns[1].addEventListener('click', function () {
+  rows[1].className = 'vh';
+}, false);
+
+btns[2].addEventListener('click', function () {
+  rows[1].className = '';
+}, false);
+</script>
+</html>

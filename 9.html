@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="scripts/jquery.min.js"></script>
+		<script type="text/javascript">
+		/*创建xmlhttprequest对象*/
+			function createXhr(){
+				var xhr = null;
+				if(window.XMLHttpRequest){
+					xhr = new XMLHttpRequest();
+				}else{
+					xhr = new ActiveXObject("Microsoft.XMLHttp");
+				}
+				return xhr;
+			}
+			$(document).ready(function(){
+				$("#txtName").blur(function(){
+
+					var xhr = createXhr();
+					var name = $("#txtName").val();
+					var url = "checkname.php?name="+name;
+					xhr.open("get",url,true);
+					xhr.onreadystatechange = function(){
+						if(xhr.readyState == 4 && xhr.status == 200){
+							var resText = xhr.responseText;
+							$("#txtNameTip").html(resText);
+						}
+					}
+					xhr.send(null);
+				});
+			});
+			/**
+			 * 异步请求方法
+			function getServerText(){
+				//1、获取xhr
+				var xhr = createXhr();
+				//2、创建请求
+				xhr.open("get","server.php",true);
+				//3、设置回调函数
+				xhr.onreadystatechange=function(){
+					if(xhr.readyState == 4 && xhr.status == 200){
+						//服务器已经正确处理请求，并且正确响应数据到客户端
+						var resText = xhr.responseText;
+						document.getElementById("showTxt").innerHTML=resText;
+					}
+				}
+				//4、发送请求
+				xhr.send(null);
+			}
+			 */
+			/*function loadXMLDoc()
+			{
+				return document.getElementsByTagName('h3')[0].innerHTML = "aaa";
+			}*/
+		</script>
+	</head>
+	<body>
+		name:<input type="text" id="txtName">
+		<span id="txtNameTip">*</span>
+		<!-- 
+		<div id="showTxt"></div>
+  		<a href="javascript:getServerText();">提交数据</a>
+		<div id="myDiv"><h3>Let AJAX change this text</h3></div>
+		<button type="button" onclick="loadXMLDoc()">Change Content</button>
+		SAAAAAAAAAAAAAAAAAAAAA -->
+
+	</body>
+</html>

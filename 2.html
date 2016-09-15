@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+<select id="provinces" onchange="cCt(this.value)">
+	<option value="-1">--请选择--</option>
+</select>
+<select id="cities">
+	<option value="-1">--请选择--</option>
+</select>
+<script type="text/javascript">
+	var ps = ['北京','天津','河北'];
+	var cs = [
+		['东城','西城'],
+		['东城','西城'],
+		['东城','西城']
+	];
+	var fragment = document.createDocumentFragment();
+	for(var i=0; i<ps.length; i++){
+		var option = document.createElement('option');
+		option.setAttribute('value',i);
+		option.innerHTML = ps[i];
+		fragment.appendChild(option);
+	}
+	document.getElementById('provinces').appendChild(fragment);
+ 	function cCt(pno){
+ 		if(pno == -1){
+ 			return;
+ 		}
+ 		//删除已有
+ 		var cSelect = document.getElementById('cities');
+ 		while(cSelect.children.length>1){
+ 			cSelect.removeChild(cSelect.lastElementChild);
+ 		}
+ 		var cityArr = cs[pno]
+ 		var fragment = document.createDocumentFragment();
+		for(var i=0; i<cityArr.length; i++){
+			var option = document.createElement('option');
+			option.setAttribute('value',i);
+			option.innerHTML = cityArr[i];
+			fragment.appendChild(option);
+		}
+		document.getElementById('cities').appendChild(fragment);
+ 	}
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <td>aaaaa</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td class="target">bbbbbbbbbbbbb</td>
+    </tr>
+    </tbody>
+</table>
+<ul>
+    <li class="target">aaaaaaaa</li>
+    <li class="target">aaaaaaaa</li>
+    <li class="target">aaaaaaaa</li>
+    <li class="target">aaaaaaaa</li>
+    <li class="target">aaaaaaaa</li>
+    <li class="target">aaaaaaaa</li>
+    <li>aaaaaaaa</li>
+    <li>aaaaaaaa</li>
+    <li>aaaaaaaa</li>
+</ul>
+<script type="text/javascript" src="scripts/jquery.min.js"></script>
+
+<script>
+    $('.target').on('click', function(e){
+        alert('a');
+    });
+    /*var target = document.getElementsByClassName('target')[0];
+    target.onclick = function (event) {
+        console.log("Td is clicked");
+        alert('a');
+    };
+    document.body.onclick = function (event) {
+        console.log("Body is clicked");
+    };*/
+    $('input').on('focus', function() {
+        $('ul').show();
+    }).on('blur', function() {
+        $('ul').hide();
+    });
+
+    $('ul').on('mousedown', function(event) {
+        event.preventDefault();
+    }).on('click', 'li', function() {
+        $('input').val(this.textContent).blur();
+    });
+</script>
+</body>
+</html>

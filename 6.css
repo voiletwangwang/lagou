@@ -1,0 +1,9 @@
+/*
+h1{
+    border: 1px dotted #e0e0e0;
+    border-radius: 5px;
+    box-shadow: 5px 5px #e0e0e0;
+}*/
+header,footer,section,aside,article,div,nav{
+    border: 1px dotted #abc;
+}

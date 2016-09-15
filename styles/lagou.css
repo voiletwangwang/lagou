@@ -1,0 +1,312 @@
+body {
+    font-family: "Hiragino Sans GB", "Microsoft Yahei", SimSun, Arial, "Helvetica Neue", Helvetica;
+}
+a {
+    color: #555;
+    background-color: transparent;
+    text-decoration: none;
+}
+ul li {
+    list-style: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+a:link {
+    color: #555;
+}
+a:hover {
+    color: #00B38A;
+}
+a:visited {
+    color: #fff;
+}
+a:active {
+    color: #00B38A;
+}
+
+.show-layer {
+    line-height: 50px;
+    color: #9d9d9d;
+}
+
+.show-layer:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-logo {
+    margin-top: 50px;
+}
+
+.nav-logo .navbar-header span.city {
+    margin-left: 20px;
+    font-size: 18px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.nav-logo .navbar-header a.change-city {
+    font-size: 10px;
+    color: #888;
+}
+
+.nav-logo .navbar-header a.change-city:hover {
+    text-decoration: none;
+}
+
+.nav-logo .logo {
+    line-height: 50px;
+}
+
+.nav-logo .nav-home {
+    font-size: 18px;
+    margin-left: 150px;
+}
+
+.nav-logo .nav-home li {
+    margin-right: 10px;
+
+}
+
+.navbar-nav {
+    margin: 0 20px;
+}
+
+.dropdown-menu {
+    min-width: 110px;
+    background-color: #000;
+}
+
+.dropdown-menu li a {
+    color: #ddd;
+}
+
+.sidebar {
+    width: 230px;
+    z-index: 101;
+    float: left;
+    position: relative;
+}
+.sidebar .main-navs {
+    background: #fafafa;
+}
+.sidebar .menu-main {
+    padding: 6px 12px;
+    border: 2px solid #fafafa;
+    border-right: 0;
+    overflow: hidden;
+    position: relative;
+}
+.sidebar .menu-main h2 {
+    font-size: 18px;
+    padding-left: 8px;
+    font-weight: 500;
+}
+.sidebar .menu-main a {
+    float: left;
+    white-space: nowrap;
+    margin: 0 5px 5px 0;
+    padding: 0 8px;
+}
+.sidebar .menu-main a:hover {
+    color: #00b38a;
+    text-decoration: underline;
+}
+
+.sidebar .current .menu-main {
+    width: 210px;
+    background: #fff;
+    border: 2px solid #c9cbce;
+    border-right: 0;
+    z-index: 102;
+    padding-right: 0px;
+}
+
+.sidebar .menu-sub {
+    width: 540px;
+    padding: 15px 30px 5px;
+    position: absolute;
+    top: 0;
+    left: 208px;
+    z-index: 101;
+    border: 2px solid #c9cbce;
+    background: #fff;
+}
+
+.dn {
+    display: none;
+}
+
+.sidebar .menu-sub dl {
+    margin: 0 0 20px;
+}
+.sidebar .menu-sub dt {
+    width: 70px;
+    font-size: 14px;
+    margin: 0;
+    text-align: right;
+    position: absolute;
+    font-weight: 500;
+}
+.sidebar .menu-sub dd {
+    margin-left: 100px;
+    overflow: hidden;
+}
+.sidebar .menu-sub dt a {
+    padding: 0;
+    color: #333;
+    line-height: 28px;
+    text-decoration: underline;
+}
+.sidebar .menu-sub dd a {
+    white-space: nowrap;
+    padding: 0 10px;
+    background: url(../images/arr.png) -29px center no-repeat;
+    color: #777;
+    line-height: 28px;
+    margin-left: -1px;
+}
+.sidebar .menu-sub dd a:hover {
+    color: #00b38a;
+}
+.sidebar .menu-sub dd a.curr {
+    color: #00b38a;
+    background-position: -29px center!important;
+}
+.search button {
+    background-color: #00B38A;
+}
+
+.search-text {
+    border: 2px solid #00B38A;
+    position: relative;
+}
+
+.form-control:focus {
+    border-color: #00B38A;
+}
+.search-list {
+    width: 97%;
+    border: 2px solid #00B38A;
+    border-top: none;
+    display: none;
+    position: absolute;
+    z-index: 2;
+    background-color: #fff;
+}
+
+.search-list li {
+    font-size: 1.1em;
+    color: #555;
+    padding: 5px 6px;
+    cursor: pointer;
+}
+
+.search-hot {
+    margin-bottom: 15px;
+}
+
+.search-hot li {
+    display: inline-block;
+    margin-right: 8px;
+    color: #666;
+}
+
+.search-hot li a {
+    color: #00B38A;
+}
+
+.carousel {
+    margin-bottom: 15px;
+}
+
+.nav-pills li.active a {
+    background-color: #00B38A;
+}
+
+.nav-pills li.other a {
+    color: #00B38A;;
+}
+
+#title {
+    font-size: 20px;
+}
+
+.cr {
+    clear: both;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.title, .area, .company {
+    color: #00B38A;
+}
+
+.demand {
+    padding-top: 10px;
+}
+
+.jobs .nav-tabs {
+    background-color: #eee;
+    border: none;
+}
+
+.jobs .nav-tabs > li > a {
+    border: none;
+    border-radius: 0;
+    color: #9999B0;
+}
+
+.jobs .nav-tabs > li.active > a,
+.jobs .nav-tabs > li.active > a:focus,
+.jobs .nav-tabs > li.active > a:hover,
+.jobs .nav > li.active > a,
+.jobs .nav > li.active > a:focus,
+.jobs .nav > li.active > a:hover {
+    border: none;
+    border-top: 3px solid #00B38A;
+    padding-top: 7px !important;
+    color: #555;
+}
+
+/*职位列表样式*/
+.jobs li {
+    border: none;
+    padding-bottom: 0;
+}
+
+.job-title,
+.job-company {
+    font-size: 16px;
+    color: #00B38A;
+}
+
+.salary {
+    font-size: 18px;
+    color: #FA6046;
+}
+
+.job-welfare {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-bottom: 1px;
+    border-bottom: dashed 1px #ddd;
+    background-color: #eee;
+}
+.list-more {
+    font-size: 16px;
+    color: #fff;
+    background: #00b38a;
+    padding: 5px 14px 5px 15px;
+    margin: 10px 0 0;
+    margin-top: 25px;
+}

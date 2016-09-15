@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="view" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/site.css">
+    <script src="scripts/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <title>booklist</title>
+</head>
+<body class="container">
+    <header class="page-header">
+        <h1 class="text-capitalize">dropdown</h1>
+    </header>
+
+    <div>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#comp">计算机类</a>
+                            </h4>
+                        </div>
+                        <div id="comp" class="panel-collapse collapse in">
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#cult">文学类</a>
+                            </h4>
+                        </div>
+                        <div id="cult" class="panel-collapse collapse">
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#chrd">儿童类</a>
+                            </h4>
+                        </div>
+                        <div id="chrd" class="panel-collapse collapse">
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-9">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+
+                    </div>
+                    <div class="panel-body">
+                        <blockquote>
+                            <h2><span id="title"></span></h2>
+                            <footer>
+                                author:<span id="author"></span>
+                            </footer>
+                        </blockquote>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <img id="img" alt="" class="img-responsive img-rounded">
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="lead">
+                                    price:
+                                    <span class="glyphicon glyphicon-usd"></span>
+                                    <span id="price"></span>
+                                </div>
+                                <div class="lead">
+                                    date:
+                                    <code>
+                                        <span id="pubdate"></span>
+                                    </code>
+                                </div>
+                                <div class="lead">
+                                    category:
+                                    <span id="category"></span>
+                                </div>
+                                <p class="text-right">
+                                    <button type="button" class="btn btn-primary btn-block btn-lg">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                        add to card
+                                    </button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script>
+        var comps = new Array();
+        var cults = new Array();
+        var chrds  = new Array();
+        var a = 0;
+        var b = 0;
+        var c = 0;
+        function showBookInfo(book){
+            $("#title").html(book.Title);
+            $("#author").html(book.Author);
+            $("#price").html(book.Price);
+            $("#pubdate").html(book.Pubdate);
+            $("#").html(book.Category.Name);
+            $("#img").attr('src','images/koala.jpg');
+        }
+        $(function(){
+            $.getJSON('json/books.json',null,function(data){
+                $(data).each(function(index, book){
+                    if (book.Category.Id == 1) {
+                        comps[a++] = book;
+                    }
+                    if (book.Category.Id == 2){
+                        cults[b++] = book;
+                    }
+
+                    if (book.Category.Id == 3) {
+                        chrds[c++] = book;
+                    }
+                });
+                $(comps).each(function(index, book) {
+                    $("#comp").append($("<div>").addClass("list-group").append($("<a>").addClass("list-group-item").html(book.Title).attr("href","javascript:void(0)").data("b",book).on("click",function(){
+                        var b = $(this).data("b");
+                        showBookInfo(b);
+                    })));
+                });
+                $(cults).each(function(index, book) {
+                    $("#cult").append($("<div>").addClass("list-group").append($("<a>").addClass("list-group-item").html(book.Title).attr("href","javascript:void(0)").data("b",book).on("click",function(){
+                        var b = $(this).data("b");
+                        showBookInfo(b);
+                    })));
+                });
+                $(chrds).each(function(index, book){
+                    $("#chrd").append($("<div>").addClass("list-group").append($("<a>").addClass("list-group-item").html(book.Title).attr("href","javascript:void(0)").data("b",book).on("click",function(){
+                        var b = $(this).data("b");
+                    })));
+                });
+                $("a[href='#comp']").append($("<span>").addClass("badge pull-right").html(comps.length));
+                $("a[href='#cult']").append($("<span>").addClass("badge pull-right").html(cults.length));
+                $("a[href='#chrd']").append($("<span>").addClass("badge pull-right").html(chrds.length));
+            });
+        });
+    </script>
+    </div>
+    <footer class="navbar-fixed-bottom text-center">
+        &copy; 2016 <span class="glyphicon glyphicon-copyright-mark"></span>
+    </footer>
+</body>
+</html>

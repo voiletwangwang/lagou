@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>侧边</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="styles/reset.css">
+	<style type="text/css">
+		.c {
+			position: fixed;
+			top: 300px;
+
+		}
+		.out {
+			position: fixed;
+			top: 300px;
+			width: 200px;
+			height: 400px;
+			background: #e66;
+			display: none;
+		}
+		#a{
+			width: 300px;
+			height: 400px;
+		}
+		@keyframes mymove {
+			from{background: #eee; left: -200px;}
+			to{background: #e66; left: 0;}
+		}
+	</style>
+</head>
+<body>
+<div id="a">
+	<button class="btn btn-warning c" id="btn">click</button>
+	<div class="warning out" id="div1">
+		<ul>
+			<li>aaaaa</li>
+			<li>aaaaa</li>
+			<li>aaaaa</li>
+			<li>aaaaa</li>
+		</ul>
+	</div>
+</div>
+<script>
+	(function(){
+		var btn = document.getElementById('btn');
+		var div1 = document.getElementById('div1');
+		btn.onclick = function(){
+			btn.style.display = 'none';
+			div1.style.display = 'block';
+			div1.style.animation = 'mymove 5s'
+		}
+	}())
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function $(id){
+			return document.getElementById(id);
+		}
+		function ini(){
+			var pro = $("pro");
+			setInterval(function(){
+				var value = parseInt(pro.value);
+				if(value>=parseInt(pro.max)){
+					pro.value = 0;
+				}
+				pro.value += 10;
+			},200);
+		}
+		window.addEventListener("load",ini,false);
+	</script>
+</head>
+<body>
+<progress id="pro" value="50" max="100"></progress>
+<hr>
+<meter id="pro1" min="0" max="500" low="30" high="400" value="410"></meter>
+</body>
+</html>
